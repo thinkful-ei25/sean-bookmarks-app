@@ -1,5 +1,5 @@
 'use strict'; 
-/* global api, STORE */
+/* global api */
 
 //STORE.addItem('can you get at me bro'); 
 // const testItem = {
