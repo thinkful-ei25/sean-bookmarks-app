@@ -4,7 +4,6 @@
 
 $(document).ready(function() { 
   bookmarks.bindEventListeners(); 
-  bookmarks.render(); 
 
   api.getItems((items) => { 
     items.forEach(item => STORE.addItem(item));
