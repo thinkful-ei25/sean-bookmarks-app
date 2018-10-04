@@ -1,5 +1,6 @@
 'use strict'; 
-/* global api */
+/* global bookmarks */
+/*eslint-env jquery*/
 
 //STORE.addItem('can you get at me bro'); 
 // const testItem = {
@@ -33,4 +34,9 @@
 
 
 // eslint-disable-next-line no-console
-api.getItems(items => items.forEach((item => console.log('ITEMS: ' + item.id))));  
+//api.getItems(items => items.forEach((item => console.log('ITEMS: ' + item.id))));  
+
+$(document).ready(function() { 
+  bookmarks.bindEventListeners(); 
+  bookmarks.render(); 
+}); 
