@@ -38,6 +38,13 @@ const bookmarks = (function(){
     }); 
   }
 
+  function handleAddingItem(){ 
+    $('#js-bookmark-list').on('click', 'li', function(){ 
+
+      console.log('hello there');
+    }); 
+  }
+
   function handleDeleteItemClicked(){  
 
   }
@@ -50,13 +57,15 @@ const bookmarks = (function(){
     let items = STORE.items; 
     const bookmarksItemsString = generateBookmarkString(items); 
 
-    $('.js-bookmark-list').html(bookmarksItemsString); 
+    $('#js-bookmark-list').html(bookmarksItemsString); 
   }
 
   function bindEventListeners(){ 
     handleNewItemSubmit(); 
+    handleAddingItem();  
     handleDeleteItemClicked(); 
-    handleFilterByRating(); 
+    handleFilterByRating();
+
   }
 
   $.fn.extend({
