@@ -4,6 +4,18 @@
 
 // eslint-disable-next-line no-unused-vars
 const bookmarks = (function(){ 
+
+  function generateItemElement(item) { 
+    return `
+    <li>${item.title} ${item.rating}</li>
+    `; 
+  }
+
+  function generateBookmarkString(bookmarks) { 
+    const items = bookmarks.map(item => generateItemElement(item)); 
+    return items.join(''); 
+  }
+
   function handleNewItemSubmit(){ 
     $('#js-bookmark-form').submit(event => { 
       event.preventDefault();
@@ -34,14 +46,17 @@ const bookmarks = (function(){
 
   }
 
+  function render(){ 
+    let items = STORE.items; 
+    const bookmarksItemsString = generateBookmarkString(items); 
+
+    $('.js-bookmark-list').html(bookmarksItemsString); 
+  }
+
   function bindEventListeners(){ 
     handleNewItemSubmit(); 
     handleDeleteItemClicked(); 
     handleFilterByRating(); 
-  }
-
-  function render(){ 
-
   }
 
   $.fn.extend({
