@@ -4,18 +4,15 @@
 const STORE = (function(){ 
   
   const addItem = function(item) { 
-    // eslint-disable-next-line no-console
-    console.log(item);
+    this.items.push(item); 
   }; 
 
   const findById = function(id) { 
-    // eslint-disable-next-line no-console
-    console.log(id);
+    return this.items.find(item => item.id === id);
   }; 
 
   const findAndDelete = function(id) { 
-    // eslint-disable-next-line no-console
-    console.log(id);
+    this.items = this.items.filter(item => item.id !== id); 
   }; 
 
   return {
