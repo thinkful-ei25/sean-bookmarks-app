@@ -26,8 +26,6 @@ const bookmarks = (function(){
     }); 
   }
 
- 
-
   function handleDeleteItemClicked(){  
 
   }
