@@ -11,7 +11,6 @@ const api = (function(){
 
   const createItem = function(item, callbackSuccess, callbackFail) { 
     item = JSON.stringify(item); 
-    console.log(item);
     
     $.ajax(
       { 
@@ -26,9 +25,19 @@ const api = (function(){
     ); 
   }; 
 
+  const deleteItem = function(id, callback){
+    $.ajax(
+      { 
+        url : `${BASE_URL}/bookmarks/${id}`, 
+        method : 'DELETE', 
+        success : callback, 
+      }
+    ); 
+  }; 
 
   return {
     getItems, 
-    createItem
+    createItem, 
+    deleteItem
   }; 
 }()); 
