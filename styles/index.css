@@ -22,9 +22,16 @@ body {
   margin-top: 10px; 
   display: block;
 }
-.input-group > button { 
+
+.input-group > input { 
   margin-top: 10px; 
   display: block;
+}
+
+.input-group > button { 
+  margin-top: 10px; 
+  margin-right: 50px; 
+  display: inline-block;
 }
 
 .items-column {
@@ -33,3 +40,4 @@ body {
   height : 100%;
   width: 30%;  
 }
+
