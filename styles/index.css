@@ -1,0 +1,22 @@
+* { 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.items-column{ 
+  height : 100%;
+  width: 30%;  
+}
+
+.data-entry-section{
+  position : relative; 
+  left : 30%;  
+  height : 100%; 
+}
+
+.navHead { 
+  display: inline-block; 
+}
