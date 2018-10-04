@@ -28,6 +28,7 @@ const bookmarks = (function(){
           // eslint-disable-next-line no-console
           console.log('SUCCESS!: ' + newBookmark.name);
           STORE.addItem(newBookmark); 
+          STORE.adding = false; 
           render(); 
         },
         (err) => { 
@@ -40,8 +41,7 @@ const bookmarks = (function(){
 
   function handleAddingItem(){ 
     $('#js-bookmark-list').on('click', 'li', function(){ 
-
-      console.log('hello there');
+      STORE.adding = true; 
     }); 
   }
 

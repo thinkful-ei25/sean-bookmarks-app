@@ -17,6 +17,7 @@ const STORE = (function(){
 
   return {
     items: [], 
+    adding: false,
     error: null,
     addItem, 
     findById, 
