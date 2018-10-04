@@ -9,9 +9,7 @@ const api = (function(){
     $.getJSON(`${BASE_URL}/bookmarks`, callback); 
   }; 
 
-  const createItem = function(item, callbackSuccess, callbackFail) { 
-    item = JSON.stringify(item); 
-    
+  const createItem = function(item, callbackSuccess, callbackFail) {     
     $.ajax(
       { 
         url : `${BASE_URL}/bookmarks`, 
