@@ -133,17 +133,15 @@ const bookmarks = (function(){
 
   function render(){ 
     let items = STORE.items; 
-    //console.log('YOO: ' + STORE.getError());
+
     if (STORE.getError() !== null){ 
-      console.log('GOT ERROR: ' + STORE.getError());
-      //console.log('hi');
       const el = generateError(STORE.error); 
       $('.js-error').html(el); 
     }else { 
       $('.js-error').empty(); 
     }
 
-    if (STORE.adding === true && STORE.detail === null){ 
+    if (STORE.adding === true){ 
       const addingItemHtml = generateAdding(); 
       $('#js-bookmark-form').html(addingItemHtml); 
     }
