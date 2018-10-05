@@ -40,6 +40,11 @@ ul {
   list-style: none;
 }
 
+#js-bookmark-list{ 
+  padding-left: 0px; 
+  margin: 0px; 
+}
+
 .items-column {
   background-color: grey; 
   float: left; 
@@ -47,14 +52,28 @@ ul {
   width: 30%;  
 }
 
+.heading-container{ 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.navHead-container{ 
+  display: flex; 
+  justify-content: space-between;
+}
 li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
   background-color: yellow; 
 }
 
+.navHead-container h1{ 
+  margin: 0px; 
+  /* font-size: 3.1em;  */
+}
+
+
 .radio { 
   float: left; 
   margin-right: 20px; 
-
 }
 
 .add-item { 

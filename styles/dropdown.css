@@ -1,7 +1,6 @@
 .dropbtn {
   background-color:whitesmoke;
   color:black;
-  padding: 16px;
   font-size: 16px;
   border: none;
 }
@@ -11,6 +10,7 @@
   display: inline-block;
 }
 
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -19,6 +19,8 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
+
+
 
 #bookmark-description{ 
   height: 100px; 
