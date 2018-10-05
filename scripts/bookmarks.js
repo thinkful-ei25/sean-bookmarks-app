@@ -65,15 +65,11 @@ const bookmarks = (function(){
       api.createItem(
         newBookmark, 
         (newBookmark) => { 
-          // eslint-disable-next-line no-console
-          console.log('SUCCESS!: ' + newBookmark.name);
           STORE.addItem(newBookmark); 
           STORE.setAdding(false); 
           render(); 
         },
         (err) => {  
-          // eslint-disable-next-line no-console
-          // console.log('ERROR: ' + err.responseJSON.message);
           STORE.setError(err.responseJSON.message); 
           render(); 
         }
