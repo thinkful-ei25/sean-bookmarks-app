@@ -15,6 +15,14 @@ const STORE = (function(){
     this.items = this.items.filter(item => item.id !== id); 
   }; 
 
+  const setAdding = function(adding){ 
+    this.adding = adding; 
+  }; 
+
+  const setDetail = function(detail){ 
+    this.detail = detail; 
+  }; 
+
   return {
     items: [], 
     adding: false,
@@ -23,6 +31,8 @@ const STORE = (function(){
     error: null,
     addItem, 
     findById, 
-    findAndDelete
+    findAndDelete, 
+    setAdding, 
+    setDetail
   }; 
 }()); 

@@ -65,7 +65,7 @@ const bookmarks = (function(){
           // eslint-disable-next-line no-console
           console.log('SUCCESS!: ' + newBookmark.name);
           STORE.addItem(newBookmark); 
-          STORE.adding = false; 
+          STORE.setAdding(false); 
           render(); 
         },
         (err) => {  
@@ -78,8 +78,8 @@ const bookmarks = (function(){
 
   function handleAddingItem(){ 
     $('.js-navHead').click( function(){ 
-      STORE.adding = true; 
-      STORE.detail = null;
+      STORE.setAdding(true);  
+      STORE.setDetail(null);
       render();  
     });  
   } 
@@ -88,7 +88,7 @@ const bookmarks = (function(){
     $('#js-bookmark-list').on('click', 'li', function(event){ 
       const id = $(event.target).data('item-id');  
       const find = STORE.findById(id); 
-      STORE.detail = find;
+      STORE.setDetail(find);
       render(); 
     }); 
   }
@@ -153,5 +153,4 @@ const bookmarks = (function(){
     render, 
     bindEventListeners
   }; 
-
 }()); 
