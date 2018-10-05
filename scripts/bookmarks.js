@@ -18,18 +18,28 @@ const bookmarks = (function(){
   }
 
   function generateAdding(){ 
-
+    return `
+      <form id="js-bookmark-form" >
+        <div class="input-group">
+          <label for="bookmark-title">Title:</label> 
+          <input type="text" name="title" id="bookmark-title" />
+          <label for="bookmark-url">URL:</label> 
+          <input type="text" name="url" id="bookmark-url" />
+          <label for="bookmark-description">Description:</label>
+          <input type="text" name="desc" id="bookmark-description" />
+          <label for="bookmark-rating">Rating:</label>
+          <input type="text" name="rating" id="bookmark-rating" />
+          <button type="submit">Submit</button>
+          <!-- <button type="button">Delete</button> -->
+        </div>
+      </form>`;
   }
 
   function generateBookmarkString(bookmarks) { 
-    const items = bookmarks.map(item => generateItemElement(item)); 
-    if (STORE.adding === true){ 
-      generateAdding(); 
-    }
-    if (STORE.detail !== null){ 
-      generateDetail(); 
-    }
-    return items.join(''); 
+    let items = bookmarks.map(item => generateItemElement(item)); 
+    items.join(' '); 
+
+    return items.join(' '); 
   }
 
   function handleNewItemSubmit(){ 
@@ -57,7 +67,6 @@ const bookmarks = (function(){
 
   function handleAddingItem(){ 
     $('.js-navHead').click( function(){ 
-      // eslint-disable-next-line no-console
       STORE.adding = true; 
       STORE.detail = null;
       render();  
@@ -71,7 +80,6 @@ const bookmarks = (function(){
       STORE.detail = find; 
       render(); 
 
-      // eslint-disable-next-line no-console
     }); 
   }
 
@@ -85,16 +93,18 @@ const bookmarks = (function(){
 
   function render(){ 
     let items = STORE.items; 
-    const bookmarksItemsString = generateBookmarkString(items); 
-    console.log('Were adding an item: ' + STORE.adding); 
+    const bookmarksItemsString = generateBookmarkString(items);
 
-    if (STORE.detail !== null){ 
-      console.log('Were detailing an item: ' + STORE.detail.title); 
-    } else { 
-      console.log('Were detailing an item: ' + STORE.detail); 
+    if (STORE.adding === true){ 
+      const addingItemHtml = generateAdding(); 
+      $('.data-entry-section').html(addingItemHtml); 
+      
     }
 
-    
+    if (STORE.detail !== null){ 
+      generateDetail(); 
+    }
+
     $('#js-bookmark-list').html(bookmarksItemsString); 
   }
 
