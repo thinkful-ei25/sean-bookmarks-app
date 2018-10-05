@@ -97,6 +97,10 @@ const bookmarks = (function(){
   }
 
   function handleFilterByRating(){ 
+    $('.dropdown').on('click', 'a', function(event){ 
+      const filterVal = $(event.target).data('item-id'); 
+      console.log('yo ' + filterVal);
+    }); 
 
   }
 
