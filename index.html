@@ -9,13 +9,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/dropdown.css">
   
 </head>
 <body>
   <div class="container">
     <section class="items-column">
         <h1 class="navHead">Book Nook</h1>
-        <button class="navHead js-navHead" type="submit">Add item</button>
+        <div class="navHead">
+          <button class="js-navHead" type="submit">Add item</button>
+
+          <div class="dropdown">
+              <button class="dropbtn">Dropdown</button>
+              <div class="dropdown-content">
+                <a href="#">1 Star</a>
+                <a href="#">2 Star</a>
+                <a href="#">3 Star</a>
+                <a href="#">4 Star</a>
+                <a href="#">5 Star</a>
+              </div>
+          </div>
+        </div>
+
         <ul id="js-bookmark-list"></ul>
     </section>
     <section class ="data-entry-section"></section>
