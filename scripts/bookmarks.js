@@ -73,8 +73,9 @@ const bookmarks = (function(){
         },
         (err) => {  
           // eslint-disable-next-line no-console
-          console.log('ERROR: ' + err.name);
-          STORE.setError(err); 
+          // console.log('ERROR: ' + err.responseJSON.message);
+          STORE.setError(err.responseJSON.message); 
+          render(); 
         }
       );
     }); 
@@ -118,11 +119,9 @@ const bookmarks = (function(){
 
   function generateError(err){ 
     let message = '';
-    if (err.responseJSON && err.responseJSON.message) {
-      message = err.responseJSON.message;
-    } else {
-      message = `${err.code} Server Error`;
-    }
+   
+    message = err;
+    console.log('ERROR: ' + err);
 
     return `
       <section class="error-content">
@@ -134,13 +133,15 @@ const bookmarks = (function(){
 
   function render(){ 
     let items = STORE.items; 
-
-    // if (STORE.error){ 
-    //   const el = generateError(STORE.error); 
-    // //   $('.js-error').html(el); 
-    // // }else { 
-    // //   $('.js-error').empty(); 
-    // // }
+    //console.log('YOO: ' + STORE.getError());
+    if (STORE.getError() !== null){ 
+      console.log('GOT ERROR: ' + STORE.getError());
+      //console.log('hi');
+      const el = generateError(STORE.error); 
+      $('.js-error').html(el); 
+    }else { 
+      $('.js-error').empty(); 
+    }
 
     if (STORE.adding === true && STORE.detail === null){ 
       const addingItemHtml = generateAdding(); 

@@ -23,8 +23,14 @@ const STORE = (function(){
     this.detail = detail; 
   }; 
 
-  const setError = function(error){ 
+  const setError = function(error){
+    console.log('SET ERROR: ' + error);
     this.error = error; 
+  }; 
+
+  const getError = function(){ 
+    //console.log('GET ERROR: ' + this.error);
+    return this.error; 
   }; 
 
   return {
@@ -38,6 +44,7 @@ const STORE = (function(){
     findAndDelete, 
     setAdding, 
     setDetail, 
-    setError
+    setError, 
+    getError
   }; 
 }()); 
