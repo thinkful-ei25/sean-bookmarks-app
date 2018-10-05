@@ -13,6 +13,13 @@ body {
   width: 70%; 
   height : 100%; 
 }
+.detail-entry-section{
+  padding-top: 30px; 
+  padding-left: 30px; 
+  float: left; 
+  width: 70%; 
+  height : 100%; 
+}
 
 .navHead { 
   display: inline-block; 
