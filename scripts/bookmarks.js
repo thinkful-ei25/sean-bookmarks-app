@@ -16,9 +16,7 @@ const bookmarks = (function(){
   function generateDetail(item){ 
     return `
       <em class"title-label">${item.title}</em> 
-      <p class"url-lable"> URL: 
-      <a href=${item.url} target="_blank">${item.url}</a> 
-      </p>
+      <button id="js-visit-page" type="button">VISIT PAGE</button>
       <p class="rating-lable" >RATING: ${item.rating}</p>
       <p class="detail-lable" >DETAIL: ${item.desc}</p>
       <button id="delete" type="button">Delete</button>
@@ -163,7 +161,12 @@ const bookmarks = (function(){
       render();
     });
   }
-
+  function handleVistiPage(){ 
+    $('.detail-entry-section').on('click', '#js-visit-page', function(){ 
+      console.log('hi');
+      window.location.replace(STORE.detail.url);
+    }); 
+  }
   function bindEventListeners(){ 
     handleNewItemSubmit(); 
     handleAddingItem();  
@@ -171,6 +174,7 @@ const bookmarks = (function(){
     handleDetailItem();  
     handleFilterByRating();
     handleCloseError(); 
+    handleVistiPage(); 
   }
 
   return { 
