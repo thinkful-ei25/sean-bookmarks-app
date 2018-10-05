@@ -99,14 +99,14 @@ const bookmarks = (function(){
   function handleFilterByRating(){ 
     $('.dropdown').on('click', 'a', function(event){ 
       const filterVal = $(event.target).data('item-id'); 
-      console.log('yo ' + filterVal);
+      STORE.filter = filterVal; 
+      render(); 
     }); 
-
   }
 
   function render(){ 
     let items = STORE.items; 
-    const bookmarksItemsString = generateBookmarkString(items);
+
 
     if (STORE.adding === true){ 
       const addingItemHtml = generateAdding(); 
@@ -118,6 +118,11 @@ const bookmarks = (function(){
       $('.data-entry-section').html(detailHtml);
     }
 
+    if (STORE.filter > 0){ 
+      items = STORE.items.filter(item => item.rating === STORE.filter)
+    }
+
+    const bookmarksItemsString = generateBookmarkString(items);
     $('#js-bookmark-list').html(bookmarksItemsString); 
   }
 
