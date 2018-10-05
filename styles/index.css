@@ -4,14 +4,17 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: bisque; 
 }
 
 .data-entry-section, .detail-entry-section{
+  /* border: 1px solid black;  */
   padding-top: 30px; 
   padding-left: 30px; 
   float: left; 
   width: 70%; 
-  height : 100%; 
+  /* height : 100vh; */
+
 }
 
 .navHead { 
@@ -28,16 +31,10 @@ body {
   display: block;
 }
 
-.input-group > button { 
-  margin-top: 10px; 
-  margin-right: 50px; 
-  display: inline-block;
-}
-
 .items-column {
   background-color: grey; 
   float: left; 
-  height : 100%;
+  height : 100vh;
   width: 30%;  
 }
 
@@ -52,4 +49,21 @@ li:hover {
 
 .add-item { 
   display: block; 
+
+}
+
+
+
+@media only screen and (max-width: 640px) {
+  .data-entry-section, .detail-entry-section{ 
+    width: 100%;
+    height: auto;  
+    float : none; 
+  }
+
+  .items-column{ 
+    width: 100%; 
+    height: auto; 
+    float : none; 
+  }
 }
