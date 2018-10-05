@@ -99,6 +99,7 @@ const bookmarks = (function(){
       const id = STORE.detail.id; 
       api.deleteItem(id, ()=> { 
         STORE.findAndDelete(id); 
+        STORE.setDetail(null); 
         render(); 
       });       
     }); 
@@ -147,7 +148,6 @@ const bookmarks = (function(){
     }
 
     if (STORE.detail !== null){ 
-      console.log('hi');
       const detailHtml = generateDetail(STORE.detail); 
       $('.detail-entry-section').html(detailHtml);
     }
