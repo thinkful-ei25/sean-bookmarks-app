@@ -15,12 +15,6 @@ body {
   width: 70%; 
 }
 
-#bookmark-description{ 
-  padding-left:0;
-  padding-top:0;  
-  padding-bottom:0.4em;
-  padding-right: 0.4em;
-}
 .navHead { 
   display: inline-block; 
   padding-left: 20px; 
@@ -53,6 +47,8 @@ ul {
   margin: 0px; 
 }
 
+
+
 .items-column {
   background-color: grey; 
   float: left; 
@@ -79,6 +75,7 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
 }
 
 .radio { 
+
   float: left; 
   margin-right: 20px; 
 }
@@ -107,9 +104,13 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
   width: 100%; 
 
 }
+#bookmark-description{ 
+  float: left; 
+  margin-right : 500px; 
+
+}
 .dropdown { 
   height: 50%; 
-
 }
 
 .dropbtn { 

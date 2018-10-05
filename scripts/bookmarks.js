@@ -7,7 +7,6 @@ const bookmarks = (function(){
 
   function generateItemElement(item) { 
     let starString = generateStars(item); 
-    console.log('set id: ' + item.id);
     return `
     <li class="js-item-element" data-item-id="${item.id}">
       <p>${item.title} </p>
@@ -47,7 +46,7 @@ const bookmarks = (function(){
         <label for="bookmark-url">URL:</label> 
         <input type="text" placeholder="http://fakedyououturl.com" name="url" id="bookmark-url" />
         <label for="bookmark-description">Description:</label>
-        <input type="text" placeholder="details, descriptions" name="desc" id="bookmark-description" />
+        <textarea rows="2" type="text" placeholder="details, descriptions" name="desc" id="bookmark-description" ></textarea>
         <input class="radio" type="radio" name="rating" value="1" checked/>
         <p class="radio label">1</p>
         <input class="radio" type="radio" name="rating" value=""/>
@@ -75,7 +74,6 @@ const bookmarks = (function(){
       event.preventDefault();
       
       const newBookmark = $(event.currentTarget).serializeJson();  
-      console.log(STORE.items);
       api.createItem(
         newBookmark, 
         (newBookmark) => { 
@@ -101,13 +99,9 @@ const bookmarks = (function(){
 
   function handleDetailItem(){ 
     $('#js-bookmark-list').on('click', 'li', function(event){
-      
-      console.log(event.target); 
       const id = $(event.currentTarget).data('item-id');  
-      console.log('ID: ' + id);
       const find = STORE.findById(id); 
       STORE.setDetail(find);
-      console.log('FIND: ' + find);
       render(); 
     }); 
   }
