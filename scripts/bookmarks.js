@@ -24,7 +24,7 @@ const bookmarks = (function(){
 
   function generateAdding(){ 
     return `
-      <form id="js-bookmark-form" >
+    
         <div class="input-group">
           <label for="bookmark-title">Title:</label> 
           <input type="text" name="title" id="bookmark-title" />
@@ -36,7 +36,7 @@ const bookmarks = (function(){
           <input type="text" name="rating" id="bookmark-rating" />
           <button type="submit">Submit</button>
         </div>
-      </form>`;
+      `;
   }
 
   function generateBookmarkString(bookmarks) { 
@@ -61,7 +61,7 @@ const bookmarks = (function(){
           STORE.adding = false; 
           render(); 
         },
-        (err) => { 
+        (err) => {  
           // eslint-disable-next-line no-console
           console.log('ERROR: ' + err.name);
         }
@@ -81,7 +81,7 @@ const bookmarks = (function(){
     $('#js-bookmark-list').on('click', 'li', function(event){ 
       const id = $(event.target).data('item-id');  
       const find = STORE.findById(id); 
-      STORE.detail = find; 
+      STORE.detail = find;
       render(); 
     }); 
   }
@@ -107,10 +107,10 @@ const bookmarks = (function(){
   function render(){ 
     let items = STORE.items; 
 
-
+    
     if (STORE.adding === true){ 
       const addingItemHtml = generateAdding(); 
-      $('.data-entry-section').html(addingItemHtml); 
+      $('#js-bookmark-form').html(addingItemHtml); 
     }
 
     if (STORE.detail !== null){ 
