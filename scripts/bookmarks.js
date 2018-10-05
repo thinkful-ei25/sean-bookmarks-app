@@ -71,6 +71,7 @@ const bookmarks = (function(){
         (err) => {  
           // eslint-disable-next-line no-console
           console.log('ERROR: ' + err.name);
+          STORE.setError(err); 
         }
       );
     }); 
@@ -111,21 +112,51 @@ const bookmarks = (function(){
     }); 
   }
 
+  function generateError(err){ 
+    let message = '';
+    if (err.responseJSON && err.responseJSON.message) {
+      message = err.responseJSON.message;
+    } else {
+      message = `${err.code} Server Error`;
+    }
+
+    return `
+      <section class="error-content">
+        <button id="cancel-error">X</button>
+        <p>${message}</p>
+      </section>
+    `;
+  }
+
   function render(){ 
     let items = STORE.items; 
 
-    if (STORE.adding === true){ 
+    // if (STORE.error){ 
+    //   const el = generateError(STORE.error); 
+    // //   $('.js-error').html(el); 
+    // // }else { 
+    // //   $('.js-error').empty(); 
+    // // }
+
+    if (STORE.adding === true && STORE.detail === null){ 
       const addingItemHtml = generateAdding(); 
       $('#js-bookmark-form').html(addingItemHtml); 
     }
+    else { 
+      $('#js-bookmark-form').empty(); 
+    }
 
     if (STORE.detail !== null){ 
+      console.log('hi');
       const detailHtml = generateDetail(STORE.detail); 
-      $('.data-entry-section').html(detailHtml);
+      $('.detail-entry-section').html(detailHtml);
+    }
+    else{ 
+      $('.detail-entry-section').empty();
     }
 
     if (STORE.filter > 0){ 
-      items = STORE.items.filter(item => item.rating === STORE.filter)
+      items = STORE.items.filter(item => item.rating >= STORE.filter); 
     }
 
     const bookmarksItemsString = generateBookmarkString(items);

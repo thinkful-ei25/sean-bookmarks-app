@@ -23,6 +23,10 @@ const STORE = (function(){
     this.detail = detail; 
   }; 
 
+  const setError = function(error){ 
+    this.error = error; 
+  }; 
+
   return {
     items: [], 
     adding: false,
@@ -33,6 +37,7 @@ const STORE = (function(){
     findById, 
     findAndDelete, 
     setAdding, 
-    setDetail
+    setDetail, 
+    setError
   }; 
 }()); 
