@@ -15,38 +15,38 @@ const bookmarks = (function(){
 
   function generateDetail(item){ 
     return `
-      <p>TILE ${item.title}</p> 
-      <p>URL: 
+      <em class"title-label">${item.title}</em> 
+      <p class"url-lable"> URL: 
       <a href=${item.url} target="_blank">${item.url}</a> 
       </p>
-      <p>RATING: ${item.rating}</p>
-      <p>DETAIL: ${item.desc}</p>
+      <p class="rating-lable" >RATING: ${item.rating}</p>
+      <p class="detail-lable" >DETAIL: ${item.desc}</p>
       <button id="delete" type="button">Delete</button>
     `; 
   }
 
   function generateAdding(){ 
     return `
-        <div class="input-group">
-          <label for="bookmark-title">Title:</label> 
-          <input type="text" name="title" id="bookmark-title" />
-          <label for="bookmark-url">URL:</label> 
-          <input type="text" name="url" id="bookmark-url" />
-          <label for="bookmark-description">Description:</label>
-          <input type="text" name="desc" id="bookmark-description" />
-          <input class="radio" type="radio" name="rating" value="1" checked/>
-          <p class="radio label">1</p>
-          <input class="radio" type="radio" name="rating" value=""/>
-          <p class="radio label">2</p>
-          <input class="radio" type="radio" name="rating" value="3"/>
-          <p class="radio label">3</p>
-          <input class="radio"  type="radio" name="rating" value="4"/>
-          <p class="radio label">4</p>
-          <input class="radio" type="radio" name="rating" value="5"/>
-          <p class="radio label">5</p>
-          <button class="add-item" type="submit">Submit</button>
-        </div>
-      `;
+      <div class="input-group">
+      <label for="bookmark-title">Title:</label> 
+      <input type="text" name="title" id="bookmark-title" />
+      <label for="bookmark-url">URL:</label> 
+      <input type="text" name="url" id="bookmark-url" />
+      <label for="bookmark-description">Description:</label>
+      <input type="text" name="desc" id="bookmark-description" />
+      <input class="radio" type="radio" name="rating" value="1" checked/>
+      <p class="radio label">1</p>
+      <input class="radio" type="radio" name="rating" value=""/>
+      <p class="radio label">2</p>
+      <input class="radio" type="radio" name="rating" value="3"/>
+      <p class="radio label">3</p>
+      <input class="radio"  type="radio" name="rating" value="4"/>
+      <p class="radio label">4</p>
+      <input class="radio" type="radio" name="rating" value="5"/>
+      <p class="radio label">5</p>
+      <button class="add-item" type="submit">Submit</button>
+    </div>
+    `;
   }
 
   function generateBookmarkString(bookmarks) { 

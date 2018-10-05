@@ -36,21 +36,26 @@ body {
   width: 30%;  
 }
 
-li:hover, .js-navHead:hover{
+li:hover, .js-navHead:hover, #delete:hover{
   background-color: yellow; 
 }
 
 .radio { 
   float: left; 
   margin-right: 20px; 
+
 }
 
 .add-item { 
+  clear: left; 
   display: block; 
 }
 
-
-
+.detail-entry-section em{
+  border: 3px solid grey;  
+  font-size: 60px; 
+  font-weight: bold; 
+}
 
 @media only screen and (max-width: 640px) {
   .data-entry-section, .detail-entry-section{ 
