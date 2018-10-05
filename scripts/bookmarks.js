@@ -15,9 +15,12 @@ const bookmarks = (function(){
 
   function generateDetail(item){ 
     return `
-      <p>${item.title}</p> 
+      <p>TILE ${item.title}</p> 
+      <p>URL: 
       <a href=${item.url} target="_blank">${item.url}</a> 
-      <p>${item.desc}</p>
+      </p>
+      <p>RATING: ${item.rating}</p>
+      <p>DETAIL: ${item.desc}</p>
       <button id="delete" type="button">Delete</button>
     `; 
   }
@@ -170,7 +173,6 @@ const bookmarks = (function(){
     handleDetailItem();  
     handleFilterByRating();
   }
-
 
   return { 
     render, 
