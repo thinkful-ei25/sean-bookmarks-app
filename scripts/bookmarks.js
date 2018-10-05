@@ -95,7 +95,7 @@ const bookmarks = (function(){
   }
 
   function handleDeleteItemClicked(){  
-    $('.data-entry-section').on('click', '#delete', ()=>{ 
+    $('.detail-entry-section').on('click', '#delete', ()=>{ 
       const id = STORE.detail.id; 
       api.deleteItem(id, ()=> { 
         STORE.findAndDelete(id); 
