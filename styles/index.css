@@ -6,14 +6,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.data-entry-section{
-  padding-top: 30px; 
-  padding-left: 30px; 
-  float: left; 
-  width: 70%; 
-  height : 100%; 
-}
-.detail-entry-section{
+.data-entry-section, .detail-entry-section{
   padding-top: 30px; 
   padding-left: 30px; 
   float: left; 
