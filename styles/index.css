@@ -9,11 +9,20 @@ body {
 
 .data-entry-section, .detail-entry-section{
   padding-top: 30px; 
+  text-align: top; 
   padding-left: 30px; 
   float: left; 
   width: 70%; 
 }
 
+#bookmark-description{ 
+  padding-left:0;
+padding-top:0;
+padding-bottom:0.4em;
+padding-right: 0.4em;
+  /* padding: 0px; 
+  text-align: start;  */
+}
 .navHead { 
   display: inline-block; 
   padding-left: 20px; 
@@ -68,9 +77,7 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
 
 .navHead-container h1{ 
   margin: 0px; 
-  /* font-size: 3.1em;  */
 }
-
 
 .radio { 
   float: left; 
@@ -113,6 +120,10 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
   background-color:darkgrey; 
 }
 
+.checked {
+  color: orange;
+}
+
 @media only screen and (max-width: 640px) {
   .data-entry-section, .detail-entry-section{ 
     width: 100%;
@@ -125,9 +136,4 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
     height: auto; 
     float : none; 
   }
-
-  /* .js-navHead{
-    background-color: whitesmoke; 
-    height: 30px; 
-  } */
 }

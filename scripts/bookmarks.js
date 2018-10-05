@@ -6,11 +6,27 @@
 const bookmarks = (function(){ 
 
   function generateItemElement(item) { 
+    let starString = generateStars(item); 
+  
     return `
     <li class="js-item-element" data-item-id="${item.id}">
-      ${item.title} ${item.rating}
+      <p>${item.title} </p>
+      <div>
+      ${starString}
+      </div>
     </li>
     `; 
+  }
+
+  function generateStars(item){ 
+    let starsString = []; 
+    for(let i = 0; i< item.rating; i++){ 
+      starsString.push('<span class="fa fa-star checked"></span>'); 
+    }
+    for(let i = 0; i < (5-item.rating); i++){ 
+      starsString.push('<span class="fa fa-star"></span>'); 
+    }
+    return starsString.join(''); 
   }
 
   function generateDetail(item){ 
@@ -25,7 +41,6 @@ const bookmarks = (function(){
 
   function generateAdding(){ 
     return `
-
       <fieldset class="input-group">
         <label for="bookmark-title">Title:</label> 
         <input type="text" placeholder="fake title" name="title" id="bookmark-title" />
@@ -60,7 +75,7 @@ const bookmarks = (function(){
       event.preventDefault();
       
       const newBookmark = $(event.currentTarget).serializeJson();  
-
+      console.log(STORE.items);
       api.createItem(
         newBookmark, 
         (newBookmark) => { 
