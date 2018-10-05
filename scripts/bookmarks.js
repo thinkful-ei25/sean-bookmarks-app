@@ -13,8 +13,12 @@ const bookmarks = (function(){
     `; 
   }
 
-  function generateDetail(){ 
-
+  function generateDetail(item){ 
+    return `
+      <p>${item.title}</p> 
+      <a href=${item.url} target="_blank">${item.url}</a> 
+      <p>${item.desc}</p>
+    `; 
   }
 
   function generateAdding(){ 
@@ -102,7 +106,8 @@ const bookmarks = (function(){
     }
 
     if (STORE.detail !== null){ 
-      generateDetail(); 
+      const detailHtml = generateDetail(STORE.detail); 
+      $('.data-entry-section').html(detailHtml);
     }
 
     $('#js-bookmark-list').html(bookmarksItemsString); 
