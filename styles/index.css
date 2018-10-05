@@ -61,6 +61,7 @@ ul {
   display: flex; 
   justify-content: space-between;
 }
+
 li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
   background-color: yellow; 
 }
@@ -87,6 +88,27 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
   font-weight: bold; 
 }
 
+.add-sort button{ 
+  display: inline-block;  
+}
+
+.js-navHead{ 
+  height: 50%; 
+  width: 100%; 
+}
+
+.dropdown, .dropbtn { 
+  width: 100%; 
+
+}
+.dropdown { 
+  height: 50%; 
+
+}
+
+.dropbtn { 
+  height: 100%; 
+}
 
 @media only screen and (max-width: 640px) {
   .data-entry-section, .detail-entry-section{ 
@@ -101,8 +123,8 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
     float : none; 
   }
 
-  .js-navHead{
+  /* .js-navHead{
     background-color: whitesmoke; 
     height: 30px; 
-  }
+  } */
 }
