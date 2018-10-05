@@ -24,7 +24,6 @@ const bookmarks = (function(){
 
   function generateAdding(){ 
     return `
-    
         <div class="input-group">
           <label for="bookmark-title">Title:</label> 
           <input type="text" name="title" id="bookmark-title" />
@@ -107,7 +106,6 @@ const bookmarks = (function(){
   function render(){ 
     let items = STORE.items; 
 
-    
     if (STORE.adding === true){ 
       const addingItemHtml = generateAdding(); 
       $('#js-bookmark-form').html(addingItemHtml); 
@@ -132,7 +130,6 @@ const bookmarks = (function(){
     handleDeleteItemClicked();
     handleDetailItem();  
     handleFilterByRating();
-
   }
 
   $.fn.extend({
