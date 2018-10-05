@@ -36,7 +36,7 @@ body {
   width: 30%;  
 }
 
-li:hover, .js-navHead:hover, #delete:hover{
+li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
   background-color: yellow; 
 }
 
