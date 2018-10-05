@@ -24,7 +24,6 @@ const STORE = (function(){
   }; 
 
   const setError = function(error){
-    console.log('SET ERROR: ' + error);
     this.error = error; 
   }; 
 

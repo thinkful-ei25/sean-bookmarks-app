@@ -118,11 +118,7 @@ const bookmarks = (function(){
   }
 
   function generateError(err){ 
-    let message = '';
-   
-    message = err;
-    console.log('ERROR: ' + err);
-
+    let message = err; 
     return `
       <section class="error-content">
         <button id="cancel-error">X</button>
@@ -167,7 +163,6 @@ const bookmarks = (function(){
   
   function handleCloseError() {
     $('.js-error').on('click', '#cancel-error', () => {
-      console.log('clickedError');
       STORE.setError(null);
       render();
     });
