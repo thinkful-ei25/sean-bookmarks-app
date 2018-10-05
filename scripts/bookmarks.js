@@ -99,7 +99,7 @@ const bookmarks = (function(){
       const id = STORE.detail.id; 
       api.deleteItem(id, ()=> { 
         STORE.findAndDelete(id); 
-        STORE.setDetail(null); 
+        STORE.setDetail(null);
         render(); 
       });       
     }); 
@@ -171,14 +171,6 @@ const bookmarks = (function(){
     handleFilterByRating();
   }
 
-  $.fn.extend({
-    serializeJson: function() {
-      const formData = new FormData(this[0]);
-      const o = {};
-      formData.forEach((val, name) => o[name] = val);
-      return JSON.stringify(o);
-    }
-  });
 
   return { 
     render, 
