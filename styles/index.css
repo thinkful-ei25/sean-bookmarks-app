@@ -44,3 +44,12 @@ body {
 li:hover {
   background-color: yellow; 
 }
+
+.radio { 
+  float: left; 
+  margin-right: 20px; 
+}
+
+.add-item { 
+  display: block; 
+}
