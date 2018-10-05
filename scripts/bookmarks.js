@@ -31,8 +31,11 @@ const bookmarks = (function(){
           <input type="text" name="url" id="bookmark-url" />
           <label for="bookmark-description">Description:</label>
           <input type="text" name="desc" id="bookmark-description" />
-          <label for="bookmark-rating">Rating:</label>
-          <input type="text" name="rating" id="bookmark-rating" />
+          <input type="radio" name="rating" value="1" checked/>1
+          <input type="radio" name="rating" value=""/>2
+          <input type="radio" name="rating" value="3"/>3
+          <input type="radio" name="rating" value="4"/>4
+          <input type="radio" name="rating" value="5"/>5
           <button type="submit">Submit</button>
         </div>
       `;
