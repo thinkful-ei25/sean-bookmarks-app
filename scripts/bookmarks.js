@@ -137,7 +137,7 @@ const bookmarks = (function(){
       $('.js-error').empty(); 
     }
 
-    if (STORE.adding === true){ 
+    if (STORE.adding === true && STORE.detail === null){ 
       const addingItemHtml = generateAdding(); 
       $('#js-bookmark-form').html(addingItemHtml); 
     }
@@ -153,7 +153,7 @@ const bookmarks = (function(){
       $('.detail-entry-section').empty();
     }
 
-    if (STORE.filter > 0){ 
+    if (STORE.filter){ 
       items = STORE.items.filter(item => item.rating >= STORE.filter); 
     }
 
