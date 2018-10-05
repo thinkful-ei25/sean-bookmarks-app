@@ -81,4 +81,9 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
     height: auto; 
     float : none; 
   }
+
+  .js-navHead{
+    background-color: whitesmoke; 
+    height: 30px; 
+  }
 }
