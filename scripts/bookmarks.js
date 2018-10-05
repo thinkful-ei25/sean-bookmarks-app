@@ -7,7 +7,7 @@ const bookmarks = (function(){
 
   function generateItemElement(item) { 
     let starString = generateStars(item); 
-  
+    console.log('set id: ' + item.id);
     return `
     <li class="js-item-element" data-item-id="${item.id}">
       <p>${item.title} </p>
@@ -100,10 +100,14 @@ const bookmarks = (function(){
   } 
 
   function handleDetailItem(){ 
-    $('#js-bookmark-list').on('click', 'li', function(event){ 
-      const id = $(event.target).data('item-id');  
+    $('#js-bookmark-list').on('click', 'li', function(event){
+      
+      console.log(event.target); 
+      const id = $(event.currentTarget).data('item-id');  
+      console.log('ID: ' + id);
       const find = STORE.findById(id); 
       STORE.setDetail(find);
+      console.log('FIND: ' + find);
       render(); 
     }); 
   }
