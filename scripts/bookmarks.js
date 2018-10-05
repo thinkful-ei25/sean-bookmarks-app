@@ -166,6 +166,14 @@ const bookmarks = (function(){
     const bookmarksItemsString = generateBookmarkString(items);
     $('#js-bookmark-list').html(bookmarksItemsString); 
   }
+  
+  function handleCloseError() {
+    $('.js-error').on('click', '#cancel-error', () => {
+      console.log('clickedError');
+      STORE.setError(null);
+      render();
+    });
+  }
 
   function bindEventListeners(){ 
     handleNewItemSubmit(); 
@@ -173,6 +181,7 @@ const bookmarks = (function(){
     handleDeleteItemClicked();
     handleDetailItem();  
     handleFilterByRating();
+    handleCloseError(); 
   }
 
   return { 
