@@ -17,8 +17,8 @@ const bookmarks = (function(){
     return `
       <em class"title-label">${item.title}</em> 
       <button id="js-visit-page" type="button">VISIT PAGE</button>
-      <p class="rating-lable" >RATING: ${item.rating}</p>
-      <p class="detail-lable" >DETAIL: ${item.desc}</p>
+      <p class="rating-lable" ><em>RATING: </em>${item.rating} stars </p>
+      <p class="detail-lable" ><em>DETAIL: </em>${item.desc}</p>
       <button id="delete" type="button">Delete</button>
     `; 
   }
@@ -163,7 +163,6 @@ const bookmarks = (function(){
   }
   function handleVistiPage(){ 
     $('.detail-entry-section').on('click', '#js-visit-page', function(){ 
-      console.log('hi');
       window.location.replace(STORE.detail.url);
     }); 
   }
