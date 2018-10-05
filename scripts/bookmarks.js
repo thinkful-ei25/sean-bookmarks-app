@@ -18,6 +18,7 @@ const bookmarks = (function(){
       <p>${item.title}</p> 
       <a href=${item.url} target="_blank">${item.url}</a> 
       <p>${item.desc}</p>
+      <button id="delete" type="button">Delete</button>
     `; 
   }
 
@@ -34,7 +35,6 @@ const bookmarks = (function(){
           <label for="bookmark-rating">Rating:</label>
           <input type="text" name="rating" id="bookmark-rating" />
           <button type="submit">Submit</button>
-          <!-- <button type="button">Delete</button> -->
         </div>
       </form>`;
   }
@@ -83,12 +83,17 @@ const bookmarks = (function(){
       const find = STORE.findById(id); 
       STORE.detail = find; 
       render(); 
-
     }); 
   }
 
   function handleDeleteItemClicked(){  
-
+    $('.data-entry-section').on('click', '#delete', ()=>{ 
+      const id = STORE.detail.id; 
+      api.deleteItem(id, ()=> { 
+        STORE.findAndDelete(id); 
+        render(); 
+      });       
+    }); 
   }
 
   function handleFilterByRating(){ 
@@ -102,7 +107,6 @@ const bookmarks = (function(){
     if (STORE.adding === true){ 
       const addingItemHtml = generateAdding(); 
       $('.data-entry-section').html(addingItemHtml); 
-      
     }
 
     if (STORE.detail !== null){ 
