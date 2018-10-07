@@ -47,6 +47,8 @@ const bookmarks = (function(){
         <input type="text" placeholder="http://fakedyououturl.com" name="url" id="bookmark-url" />
         <label for="bookmark-description">Description:</label>
         <textarea rows="2" type="text" placeholder="details, descriptions" name="desc" id="bookmark-description" ></textarea>
+        <br>
+        <p>RATING: </p>
         <input class="radio" type="radio" name="rating" value="1" checked/>
         <p class="radio label">1</p>
         <input class="radio" type="radio" name="rating" value=""/>

@@ -105,6 +105,7 @@ li:hover, .js-navHead:hover, #delete:hover, #js-visit-page:hover{
 
 }
 #bookmark-description{ 
+  margin-bottom: 20px; 
   float: left; 
   margin-right : 500px; 
 
